@@ -13,7 +13,7 @@
           <a class="nav-link text-white" href="{{route("productos.get")}}">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Clientes</a>
+          <a class="nav-link text-white" href="{{route("clientes.get")}}">Clientes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
