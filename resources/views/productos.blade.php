@@ -35,10 +35,10 @@
                         <td>{{$i->producto}}</td>
                         <td>{{$i->precio}}</td>
                         <td>{{$i->stock}}</td>
-                        <td>{{$i->categoria}}</td>
+                        <td>{{$i->nombre_categoria}}</td>
                         <td>
                             <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            <x-deleteProducto :producto="$i"/>
                         </td>
                     </tr>
                     @endforeach
@@ -46,8 +46,5 @@
             </table>
         </div>
     </div>
-</body>
-</html>
-
 </body>
 </html>

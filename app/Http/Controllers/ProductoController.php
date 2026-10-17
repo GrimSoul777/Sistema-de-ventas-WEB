@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
     public function getProductos(){
         $productos = Producto::select(
+            'productos.id',
             'productos.producto',
             'productos.precio',
             'productos.stock',
@@ -66,7 +68,6 @@ class ProductoController extends Controller
     public function deleteProducto(int $id){
         $producto = Producto::find($id);
         $producto->delete($id);
-        $producto->save();
 
         return redirect("/productos")->with([
             "mensaje" => "producto eliminado"
