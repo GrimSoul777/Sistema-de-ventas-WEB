@@ -37,7 +37,7 @@
                         <td>{{$i->stock}}</td>
                         <td>{{$i->nombre_categoria}}</td>
                         <td>
-                            <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
+                            <x-updateProducto :producto="$i"/>
                             <x-deleteProducto :producto="$i"/>
                         </td>
                     </tr>

@@ -31,7 +31,7 @@ Route::post("productos/create",[ProductoController::class,'createProducto'])
 ->name("producto.create");
 
 Route::put("productos/update/{id}",[ProductoController::class, 'updateProducto'])
-->name("producto.update");
+->name("productos.update");
 
 Route::delete("productos/delete/{id}",[ProductoController::class, 'deleteProducto'])
 ->name("productos.delete");

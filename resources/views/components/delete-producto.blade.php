@@ -1,9 +1,9 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#eliminarProducto{{ $producto->id }}"">
   Eliminar
 </button>
 
-<div class="modal" tabindex="-1">
+<div class="modal" id="eliminarProducto{{ $producto->id }}" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -11,7 +11,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <form action="{{route('producto.delete', $producto->id)}}" method="post">
+        <form action="{{route('productos.delete', $producto->id)}}" method="post">
             @csrf
             @method('DELETE')
             <p>Desea eliminar este producto?</p>
