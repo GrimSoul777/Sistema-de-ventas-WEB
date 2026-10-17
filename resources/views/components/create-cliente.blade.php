@@ -26,7 +26,7 @@
             <!-- Email -->
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input name="inputEmail" class="form-control form-control-sm" type="text" placeholder="Ingresa el email del cliente" value="{{ old('inputEmail') }}">
+                <input name="inputEmail" class="form-control form-control-sm" type="email" placeholder="Ingresa el email del cliente" value="{{ old('inputEmail') }}">
                 @error('inputEmail')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -44,7 +44,7 @@
             <!-- Telefono -->
             <div class="mb-3">
                 <label class="form-label">Telefono</label>
-                <input name="inputTelefono" class="form-control form-control-sm" type="text" placeholder="Ingresa el telefono del cliente" value="{{ old('inputTelefono') }}">
+                <input name="inputTelefono" class="form-control form-control-sm" type="numeric" placeholder="Ingresa el telefono del cliente" value="{{ old('inputTelefono') }}">
                 @error('inputTelefono')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror

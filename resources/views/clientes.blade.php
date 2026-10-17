@@ -9,7 +9,7 @@
 </head>
 <body>
     <x-navbar/>
-    <h1 class="text-center">Productos</h1>
+    <h1 class="text-center">Clientes</h1>
     <div class="row">
         <div class="col">
             <x-createcliente/>

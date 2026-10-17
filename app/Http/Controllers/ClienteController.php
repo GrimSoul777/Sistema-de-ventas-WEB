@@ -23,9 +23,9 @@ class ClienteController extends Controller
     public function createCliente(Request $request){
         $request->validate([
             "inputNombre" => 'required',
-            "inputEmail" => 'required',
+            "inputEmail" => 'required|email',
             "inputDireccion" => 'required',
-            "inputTelefono" => 'required'
+            "inputTelefono" => 'required|numeric|digits_between:10,15'
         ]);
 
         Cliente::create([
@@ -43,9 +43,9 @@ class ClienteController extends Controller
     public function updateCliente(int $id, Request $request){
         $request->validate([
             "inputNombre" => 'required',
-            "inputEmail" => 'required',
+            "inputEmail" => 'required|email',
             "inputDireccion" => 'required',
-            "inputTelefono" => 'required'
+            "inputTelefono" => 'required|numeric|digits_between:10,15'
         ]);
 
         $cliente = Cliente::where("id", "=", $id)->first();

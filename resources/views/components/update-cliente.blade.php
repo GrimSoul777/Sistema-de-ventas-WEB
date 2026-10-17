@@ -1,3 +1,4 @@
+@props(['cliente'])
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#actualizarCliente{{ $cliente->id }}">
   Actualizar
@@ -18,7 +19,7 @@
             <!-- Nombre del cliente -->
             <div class="mb-3">
                 <label class="form-label">Cliente</label>
-                <input name="inputNombre" class="form-control form-control-sm" type="text" placeholder="Ingresa el nuevo nombre del cliente" value="{{ old('inputNombre') }}">
+                <input name="inputNombre" class="form-control form-control-sm" type="text" placeholder="Ingresa el nuevo nombre del cliente" value="{{ old('inputNombre', $cliente->nombre) }}">
                 @error('inputNombre')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -27,7 +28,7 @@
             <!-- Email -->
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input name="inputEmail" class="form-control form-control-sm" type="text" placeholder="Ingresa el nuevo Email" value="{{ old('inputEmail') }}">
+                <input name="inputEmail" class="form-control form-control-sm" type="email" placeholder="Ingresa el nuevo Email" value="{{ old('inputEmail', $cliente->email) }}">
                 @error('inputEmail')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -36,7 +37,7 @@
             <!-- Direccion -->
             <div class="mb-3">
                 <label class="form-label">Direccion</label>
-                <input name="inputDireccion" class="form-control form-control-sm" type="text" placeholder="Ingresa la nueva direccion" value="{{ old('inputDireccion') }}">
+                <input name="inputDireccion" class="form-control form-control-sm" type="text" placeholder="Ingresa la nueva direccion" value="{{ old('inputDireccion', $cliente->direccion) }}">
                 @error('inputDireccion')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -45,7 +46,7 @@
             <!-- Telefono -->
             <div class="mb-3">
                 <label class="form-label">Telefono</label>
-                <input name="inputTelefono" class="form-control form-control-sm" type="text" placeholder="Ingresa el nuevo telefono" value="{{ old('inputTelefono') }}">
+                <input name="inputTelefono" class="form-control form-control-sm" type="numeric" placeholder="Ingresa el nuevo telefono" value="{{ old('inputTelefono', $cliente->telefono) }}">
                 @error('inputTelefono')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror

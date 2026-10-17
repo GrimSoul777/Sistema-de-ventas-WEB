@@ -1,3 +1,4 @@
+@props(['cliente'])
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#eliminarCliente{{ $cliente->id }}">
   Eliminar
