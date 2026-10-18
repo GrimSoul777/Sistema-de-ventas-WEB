@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\VentaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,3 +52,16 @@ Route::put("clientes/update/{id}",[ClienteController::class, 'updateCliente'])
 
 Route::delete("clientes/delete/{id}",[ClienteController::class, 'deleteCliente'])
 ->name("clientes.delete");
+
+//Ventas
+Route::get("/ventas",[VentaController::class, 'getVentas'])
+->name("ventas.get");
+
+Route::get("ventas/create",[VentaController::class, 'createVenta'])
+->name("ventas.create");
+
+Route::get("ventas/update/{id}",[VentaController::class, 'updateVenta'])
+->name("ventas.update");
+
+Route::get("ventas/delete/{id}",[VentaController::class, 'deleteVenta'])
+->name("ventas.delete");

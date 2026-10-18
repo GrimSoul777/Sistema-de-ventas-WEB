@@ -16,7 +16,7 @@ class ProductoController extends Controller
             'productos.stock',
             'categoria.categoria as nombre_categoria'
         )->join('categoria', 'productos.categoria_id','=','categoria.id')
-         ->get();
+        ->get();
 
         return view('productos', compact('productos'));
     }
