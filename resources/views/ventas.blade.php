@@ -12,7 +12,7 @@
     <h1 class="text-center">Ventas</h1>
     <div class="row">
         <div class="col">
-            <!--<x-createcliente/>-->
+            <x-createventa/>
         </div>
     </div>
     <div class="row mt-3">
@@ -25,23 +25,45 @@
                         <th>Fecha venta</th>
                         <th>Estado</th>
                         <th>Total</th>
+                        <th>Detalle de ventas</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($ventas as $i)
-                    <tr>
-                        <td>{{$i->id}}</td>
-                        <td>{{$i->cliente_id}}</td>
-                        <td>{{$i->fecha}}</td>
-                        <td>{{$i->estado}}</td>
-                        <td>{{$i->total}}</td>
-                        <td>
-                            <!--<x-updateCliente :cliente="$i"/>-->
-                            <!--<x-deleteCliente :cliente="$i"/>-->
-                        </td>
-                    </tr>
-                    @endforeach
+                    @forelse ($ventas as $i)
+                        <tr>
+                            <td>{{ $i->id }}</td>
+                            <td>{{ $i->cliente_id }}</td>
+                            <td>{{ $i->fecha }}</td>
+                            <td>{{ $i->estado }}</td>
+                            <td>${{ number_format($i->total, 2) }}</td>
+
+                            <td>
+                                @forelse ($i->detalles as $detalle)
+                                    <div>
+                                        {{ $detalle->producto->producto }}
+                                        — Cantidad: {{ $detalle->cantidad }}
+                                        — Precio unitario:
+                                        ${{ number_format($detalle->precio_unitario, 2) }}
+                                        — Total: ${{ number_format($detalle->total, 2) }}
+                                    </div>
+                                @empty
+                                    Sin productos registrados
+                                @endforelse
+                            </td>
+
+                            <td>
+                                <x-updateVenta :venta="$i"/>
+                                <x-deleteVenta :venta="$i"/>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="7" class="text-center">
+                                No hay ventas registradas.
+                            </td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>

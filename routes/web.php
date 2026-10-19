@@ -57,11 +57,11 @@ Route::delete("clientes/delete/{id}",[ClienteController::class, 'deleteCliente']
 Route::get("/ventas",[VentaController::class, 'getVentas'])
 ->name("ventas.get");
 
-Route::get("ventas/create",[VentaController::class, 'createVenta'])
+Route::post("ventas/create",[VentaController::class, 'createVenta'])
 ->name("ventas.create");
 
-Route::get("ventas/update/{id}",[VentaController::class, 'updateVenta'])
+Route::put("ventas/update/{id}",[VentaController::class, 'updateVenta'])
 ->name("ventas.update");
 
-Route::get("ventas/delete/{id}",[VentaController::class, 'deleteVenta'])
+Route::delete("ventas/delete/{id}",[VentaController::class, 'deleteVenta'])
 ->name("ventas.delete");

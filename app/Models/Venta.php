@@ -14,4 +14,9 @@ class Venta extends Model
         'estado',
         'total'
     ];
+
+    public function detalles()
+    {
+        return $this->hasMany(DetalleVenta::class);
+    }
 }
